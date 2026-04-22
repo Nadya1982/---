@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Гайд • AI Tools Directory</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .guide-content { padding: 40px 0; max-width: 800px; margin: 0 auto; }
+    .guide-content h2 { margin: 24px 0 12px; color: var(--primary); }
+    .guide-content .step {
+      background: white;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--primary);
+    }
+    .guide-content .step strong { display: block; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">🤖 AI Stack Guide</a>
+      <ul class="nav-links">
+        <li><a href="index.html">📚 Каталог</a></li>
+        <li><a href="about.html">ℹ️ О проекте</a></li>
+        <li><a href="guide.html" class="active">📖 Гайд</a></li>
+      </ul>
+      <button class="assistant-toggle" id="assistantBtn">💬 Помощник</button>
+    </div>
+  </nav>
+
+  <main class="container guide-content">
+    <h1>📖 Как пользоваться каталогом</h1>
+    
+    <div class="step">
+      <strong>1️⃣ Поиск</strong>
+      Введи название инструмента или ключевое слово (например, «презентация», «код», «видео») в поле поиска.
+    </div>
+    
+    <div class="step">
+      <strong>2️⃣ Фильтры</strong>
+      <ul>
+        <li><strong>Категория</strong> — выбери тип задачи: текст, изображения, видео и т.д.</li>
+        <li><strong>VPN</strong> — отфильтруй инструменты по доступности из РФ</li>
+      </ul>
+    </div>
+    
+    <div class="step">
+      <strong>3️⃣ Карточка инструмента</strong>
+      В карточке ты увидишь:
+      <ul>
+        <li>🏷 Категорию и статус VPN</li>
+        <li>📝 Краткое описание возможностей</li>
+        <li>⭐ Рейтинг понимания языка</li>
+        <li>🔗 Ссылки на сайт и API</li>
+      </ul>
+    </div>
+    
+    <div class="step">
+      <strong>4️⃣ Помощник 💬</strong>
+      Нажми на кнопку «Помощник» в правом нижнем углу или в меню, чтобы задать вопрос:
+      <ul>
+        <li>«Какие инструменты без VPN?»</li>
+        <li>«Что лучше для генерации изображений?»</li>
+        <li>«Покажи категории»</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <strong>💡 Совет</strong>
+      Если не нашёл нужный инструмент — попробуй изменить фильтры или спроси у помощника. Каталог пополняется!
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 AI Stack Guide • Учебный проект</p>
+    </div>
+  </footer>
+
+  <script src="js/assistant.js"></script>
+</body>
+</html>

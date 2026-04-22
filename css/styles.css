@@ -1,0 +1,291 @@
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --vpn-yes: #fee2e2;
+  --vpn-no: #dcfce7;
+  --vpn-maybe: #fef3c7;
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Навигация */
+.navbar {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  background: #e0e7ff;
+  color: var(--primary);
+}
+.assistant-toggle {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Герой */
+.hero {
+  background: linear-gradient(135deg, var(--primary), #7c3aed);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+.hero h1 { font-size: 2rem; margin-bottom: 12px; }
+.hero p { opacity: 0.95; font-size: 1.1rem; }
+
+/* Фильтры */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 0;
+  align-items: center;
+}
+.search, select, .btn-outline {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: white;
+}
+.search { flex: 1; min-width: 200px; }
+.btn-outline {
+  background: white;
+  color: var(--primary);
+  border-color: var(--primary);
+  cursor: pointer;
+}
+.btn-outline:hover { background: #f1f5ff; }
+
+/* Сетка карточек */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  padding-bottom: 40px;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+}
+.card-title {
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.badge.category { background: #e0e7ff; color: var(--primary); }
+.badge.vpn-no { background: var(--vpn-no); color: var(--success); }
+.badge.vpn-yes { background: var(--vpn-yes); color: var(--danger); }
+.badge.vpn-maybe { background: var(--vpn-maybe); color: var(--warning); }
+
+.card-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.rating { display: flex; align-items: center; gap: 4px; font-weight: 500; }
+.rating .stars { color: #fbbf24; }
+.links a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 12px;
+}
+.links a:hover { text-decoration: underline; }
+
+/* Помощник */
+.assistant-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  z-index: 200;
+  transition: transform 0.2s;
+}
+.assistant-float:hover { transform: scale(1.05); }
+
+.assistant-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  width: 360px;
+  max-height: 500px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+  overflow: hidden;
+}
+.assistant-widget.hidden { display: none; }
+.assistant-header {
+  padding: 14px 18px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+.assistant-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.assistant-chat {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 320px;
+}
+.assistant-chat .message {
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 85%;
+  font-size: 0.95rem;
+}
+.assistant-chat .bot {
+  background: #f1f5ff;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.assistant-chat .user {
+  background: var(--primary);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.assistant-input {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid var(--border);
+  gap: 8px;
+}
+.assistant-input input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.assistant-input button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Футер */
+.footer {
+  background: var(--card-bg);
+  border-top: 1px solid var(--border);
+  padding: 20px 0;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .nav-content { flex-wrap: wrap; gap: 12px; }
+  .nav-links { gap: 12px; font-size: 0.9rem; }
+  .filters { flex-direction: column; align-items: stretch; }
+  .assistant-widget { width: calc(100vw - 48px); right: 12px; bottom: 80px; }
+}

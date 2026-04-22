@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🤖 AI Tools Directory</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Навигация -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">🤖 AI Stack Guide</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">📚 Каталог</a></li>
+        <li><a href="about.html">ℹ️ О проекте</a></li>
+        <li><a href="guide.html">📖 Гайд</a></li>
+      </ul>
+      <button class="assistant-toggle" id="assistantBtn">💬 Помощник</button>
+    </div>
+  </nav>
+
+  <!-- Герой-секция -->
+  <header class="hero">
+    <div class="container">
+      <h1>Каталог ИИ-инструментов</h1>
+      <p>Находи лучшие сервисы для работы, учёбы и творчества — с фильтрами по доступности из РФ</p>
+    </div>
+  </header>
+
+  <!-- Фильтры -->
+  <main class="container">
+    <section class="filters">
+      <input type="text" id="searchInput" class="search" placeholder="🔍 Поиск...">
+      <select id="categoryFilter">
+        <option value="">Все категории</option>
+        <option value="Текст и ресёрч">📝 Текст</option>
+        <option value="Сайты и MVP">🌐 Сайты</option>
+        <option value="Презентации">📊 Презентации</option>
+        <option value="Изображения">🎨 Изображения</option>
+        <option value="Видео">🎬 Видео</option>
+        <option value="Автоматизация">⚙️ Автоматизация</option>
+        <option value="Локальный контур">🔐 Локально</option>
+      </select>
+      <select id="vpnFilter">
+        <option value="">VPN: любой</option>
+        <option value="no">✅ Без VPN</option>
+        <option value="yes">❌ Нужен VPN</option>
+        <option value="maybe">⚠️ Нестабильно</option>
+      </select>
+      <button id="resetBtn" class="btn-outline">Сбросить</button>
+    </section>
+
+    <!-- Сетка инструментов -->
+    <section id="toolsGrid" class="tools-grid"></section>
+  </main>
+
+  <!-- Плавающий помощник -->
+  <div id="assistantWidget" class="assistant-widget hidden">
+    <div class="assistant-header">
+      <span>🤖 AI-помощник</span>
+      <button id="assistantClose">&times;</button>
+    </div>
+    <div id="assistantChat" class="assistant-chat"></div>
+    <div class="assistant-input">
+      <input type="text" id="assistantMessage" placeholder="Спроси про инструменты...">
+      <button id="assistantSend">➤</button>
+    </div>
+  </div>
+  <button id="assistantFloat" class="assistant-float">💬</button>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 AI Stack Guide • Учебный проект</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/assistant.js"></script>
+</body>
+</html>
